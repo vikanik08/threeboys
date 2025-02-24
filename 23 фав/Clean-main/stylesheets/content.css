@@ -1,0 +1,76 @@
+*{ box-sizing: border-box;}
+
+@font-face {
+font-family: "CarlaSansLight";
+src: url("../fonts/CarlaSansLight.ttf") format("truetype");
+font-style: Light;
+font-weight: Light;
+}
+
+p{ font-family: 'CarlaSansLight'; }
+
+.first_pic {
+    width: 100vw;
+    height: 55vw;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    position: absolute;
+}
+
+#box {
+    transition: width 2s ease-in-out;
+}
+
+.expanded {
+    width: 120vw !important; /* Выход за границы экрана */
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#button {
+    width: 10vw; 
+    height: 6vw;
+    margin: 3% 0 0 50%; 
+    transform: translate(-50%, -50%);  
+    background-color: green;
+    color: white; 
+    font-weight: bold;  
+    border-radius: 10px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #button:hover {
+    background-color: green; /* Темно-синий цвет при наведении */
+    transform: translate(-50%, -50%) scale(1.05); /* Увеличение кнопки при наведении */
+  }
+  
+  #button:active {
+    background-color: greenyellow; /* Еще более темный цвет при нажатии */
+    transform: translate(-50%, -50%) scale(0.95); /* Уменьшение кнопки при нажатии */
+  }
+
+.sec_pic {
+    width: 100vw;
+    height: 55vw;
+    display: none;
+    position: absolute;
+}
+
+.picpic {
+    width: 33vw;
+    animation: hithere 1s ease infinite;
+}
+
+@keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+  }
